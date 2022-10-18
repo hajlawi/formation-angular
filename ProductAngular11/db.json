@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "name": "computer",
+      "currentPrice": 400,
+      "quantity": 40,
+      "selected": true,
+      "available": false
+    },
+    {
+      "id": 3,
+      "name": "phonee",
+      "currentPrice": 400,
+      "quantity": 400,
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": 1,
+      "name": "prin",
+      "currentPrice": 300,
+      "quantity": 300,
+      "selected": true,
+      "available": false
+    }
+  ]
+}

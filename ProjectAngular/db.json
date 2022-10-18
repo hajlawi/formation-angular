@@ -1,0 +1,40 @@
+{
+  "products":[
+    {
+  "id": 1,
+  "name":"printer",
+ "currentPrice": 400,
+  "selected": true,
+  "available": true
+},
+    {
+      "id": 2,
+      "name":"computer",
+      "currentPrice": 400,
+      "selected": true,
+      "available": false
+    },
+    {
+      "id": 3,
+      "name":"phone",
+      "currentPrice": 400,
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": 1,
+      "name":"printer",
+      "currentPrice": 300,
+      "selected": false,
+      "available": false
+    }
+    ,{
+      "id": 4,
+      "name":"laser",
+      "currentPrice": 200,
+      "selected": true,
+      "available": true
+    }
+
+  ]
+}

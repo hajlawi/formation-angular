@@ -1,0 +1,56 @@
+<div class="container">
+
+  <ng-container *ngIf="(inputallProducts$|async) as result" [ngSwitch]="result.dataState">
+    <ng-container *ngSwitchCase="DataStateEnum.LOADING">
+      Loading....
+    </ng-container>
+    <ng-container *ngSwitchCase="DataStateEnum.ERROR">
+      <div class="col-12 text-center">
+        <div class="alert alert-danger">
+          {{result.errorMessage}}
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="DataStateEnum.LOADED">
+      <div class="container" *ngIf="inputallProducts$">
+        <table class="table">
+          <tr>
+            <th>Id</th>
+            <th>name</th>
+            <th>price</th>
+            <th>qte</th>
+            <th>selected</th>
+            <th>available</th>
+          </tr>
+          <tr *ngFor="let p of result.data;let i=index">
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.currentPrice}}</td>
+            <td>{{p.quantity}}</td>
+            <td>{{p.selected}}</td>
+            <td>{{p.available}}</td>
+            <td>
+              <button  (click)="Onselect(p)"   [ngClass]="{'btn-danger':p.selected,' btn-success':!p.selected}" class="btn btn-sm ">
+                <span *ngIf="p.selected">Unselect</span>
+                <span *ngIf="!p.selected">select</span>
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-danger" (click)="onDelete(p)">
+                <span class="fa fa-trash-o"></span>
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-danger" (click)="onEdit(i)">
+                <span class="fa fa-edit"></span>
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    </ng-container>
+  </ng-container>
+
+</div>
